@@ -3,15 +3,17 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-interface AvartarProps {}
+interface AvartarProps {
+  src: string | null | undefined
+}
 
-const Avartar: FC<AvartarProps> = ({}) => {
+const Avartar: FC<AvartarProps> = ({src}) => {
   return <Image 
     className='rounded-full'
     height='30'
     width='30'
     alt= 'Avartar'
-    src='/images/placeholder.jpg'
+    src={src || '/images/placeholder.jpg'}
   />;
 };
 

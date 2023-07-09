@@ -18,6 +18,7 @@ import Button from '../Button';
 
 const LoginModal = () => {
   const router = useRouter();
+  
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
@@ -55,8 +56,8 @@ const LoginModal = () => {
   };
 
   const onToggle = useCallback(() => {
-    loginModal.onClose();
     registerModal.onOpen();
+    loginModal.onClose();
   }, [loginModal, registerModal]);
 
   const bodyContent = (
